@@ -39,6 +39,7 @@ public class frnPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Hora = new javax.swing.JLabel();
@@ -69,6 +70,15 @@ public class frnPrincipal extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/thumbnail.png"))); // NOI18N
+        jLabel3.setText("CM - Store 1.0");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(784, 394, 560, 200));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/CM - Store 1.0.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1850, 630));
@@ -110,11 +120,12 @@ public class frnPrincipal extends javax.swing.JFrame {
 
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Data, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+            .addComponent(Data, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
             .addComponent(Hora, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 136, 255));
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuBar1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/store.png"))); // NOI18N
         jMenu1.setText("Empresa");
@@ -282,6 +293,7 @@ public class frnPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel Data;
     private javax.swing.JLabel Hora;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -310,7 +322,7 @@ public class frnPrincipal extends javax.swing.JFrame {
     }
 
     private void setIcon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/icongeral.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/icon.png")));
     }
 
 }
