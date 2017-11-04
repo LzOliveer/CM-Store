@@ -5,10 +5,16 @@
  */
 package UI;
 
+import DAO.Conexao;
 import java.awt.Toolkit;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,45 +22,65 @@ import java.util.logging.Logger;
  */
 public class frmSS extends javax.swing.JFrame {
 
-     /**
+    Icon erro = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/alert-octagon.png"))));
+    String resultado = null;
+    String esql = null;
+
+    /**
      * Creates new form frmSS
      */
     public frmSS() {
         initComponents();
         setIcon();
     }
+
+    public void TC() {
+        String sql = "Select * from loja";
+        PreparedStatement ps;
+        ResultSet rs;
+        try {
+            ps = Conexao.getConexao().prepareStatement(sql);
+            rs = ps.executeQuery();
+            resultado = "OK";
+        } catch (SQLException error) {
+            esql = error.toString();
+            resultado = "ERRO";
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(frmEmpresa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public void run() {
-
-                
-                    try {
-                        for (int i = 0; i < 101; i++) {
-                        Thread.sleep(100);
-                        BarraProgresso.setValue(i);
-
-                        if (BarraProgresso.getValue() <= 40) {
-                            status.setText("Conectando ao banco de dados");
-
-                        } else if (BarraProgresso.getValue() <= 70) {
-                            status.setText("Carregando sistema");
-                        } else if(BarraProgresso.getValue() <=99){
-                            status.setText("Verificando o sistema");
-                        }else{
-                            frnPrincipal fn = new frnPrincipal();
-                            fn.setVisible(true);
-                            dispose();
-                        }
-                        }
-
-                    } catch (Exception ex) {
-                        Logger.getLogger(frmSS.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-            
-                
-            
-
         
-    
+        try {
+            TC();
+            for (int i = 0; i < 101; i++) {
+                Thread.sleep(150);
+                BarraProgresso.setValue(i);
+                if (BarraProgresso.getValue() <= 30) {
+                    status.setText("Carregando sistema");
+                } else if (BarraProgresso.getValue() <= 55) {
+                    status.setText("Verificando o sistema");
+                } else if (BarraProgresso.getValue() <= 70) {
+                    status.setText("Conectando ao banco de dados");
+                } else if (BarraProgresso.getValue() == 71 && resultado == "ERRO") {
+                    JOptionPane.showMessageDialog(null, "Erro SQL:\n\n" + esql+"\n\nFavor entre em contato com o suporte", "Erro de Conexao | CM - Store 1.0", JOptionPane.ERROR_MESSAGE, erro);
+                    dispose();
+                    frmSuporte fs = new frmSuporte();
+                    fs.setVisible(true);
+                    break;
+                } else if (BarraProgresso.getValue() < 100 && resultado == "OK") {
+                    status.setText("Conectado");
+                } else if(BarraProgresso.getValue() == 100 && resultado == "OK"){
+                    frnPrincipal fn = new frnPrincipal();
+                    fn.setVisible(true);
+                    dispose();
+                }
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(frmSS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -96,7 +122,7 @@ public class frmSS extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(43, 173, 255));
 
         status.setBackground(new java.awt.Color(73, 173, 255));
-        status.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        status.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         status.setForeground(new java.awt.Color(255, 255, 255));
         status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         status.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -158,7 +184,7 @@ public class frmSS extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(frmSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */

@@ -132,7 +132,7 @@ public class frmFuncionario extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CM Store v1 | Cadastro de Funcionários");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {

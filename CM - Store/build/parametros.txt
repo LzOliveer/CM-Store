@@ -1,0 +1,6 @@
+postgresql
+org.postgresql.Driver
+localhost
+CM-Store
+postgres
+0926
