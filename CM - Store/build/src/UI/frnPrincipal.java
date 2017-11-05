@@ -5,12 +5,17 @@
  */
 package UI;
 
+import DAO.Conexao;
+import DAO.LeParametros;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Timer;
 
 /**
@@ -44,6 +49,8 @@ public class frnPrincipal extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         Hora = new javax.swing.JLabel();
         Data = new javax.swing.JLabel();
+        ConnDB = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -59,7 +66,7 @@ public class frnPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Creative Mind Corporation - CM Store v1 - Principal");
+        setTitle("Creative Mind | CM - Store 1.0 - Principal");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -104,12 +111,25 @@ public class frnPrincipal extends javax.swing.JFrame {
         Data.setForeground(new java.awt.Color(255, 255, 255));
         Data.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        ConnDB.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        ConnDB.setForeground(new java.awt.Color(255, 255, 255));
+        ConnDB.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ConnDB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/server-network_1.png"))); // NOI18N
+        ConnDB.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(1152, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(ConnDB, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 889, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Data)
                 .addGap(18, 18, 18)
                 .addComponent(Hora, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,8 +140,10 @@ public class frnPrincipal extends javax.swing.JFrame {
 
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Data, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+            .addComponent(Data, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
             .addComponent(Hora, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ConnDB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator2)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
@@ -239,7 +261,12 @@ public class frnPrincipal extends javax.swing.JFrame {
 
         Timer tm = new Timer(0, new hora());
         tm.start();
-        
+        try {
+            LeParametros.Ler();
+        } catch (IOException ex) {
+            Logger.getLogger(frnPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ConnDB.setText(Conexao.ip+Conexao.dataBase);
     }//GEN-LAST:event_formWindowOpened
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -290,6 +317,7 @@ public class frnPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ConnDB;
     private javax.swing.JLabel Data;
     private javax.swing.JLabel Hora;
     private javax.swing.JLabel jLabel1;
@@ -310,6 +338,7 @@ public class frnPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 
     class hora implements ActionListener {

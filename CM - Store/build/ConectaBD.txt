@@ -1,6 +1,6 @@
 postgresql
 org.postgresql.Driver
-localhost
+127.0.0.1/
 CM-Store
 postgres
 0926

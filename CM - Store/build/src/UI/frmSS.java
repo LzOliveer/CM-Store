@@ -6,6 +6,7 @@
 package UI;
 
 import DAO.Conexao;
+import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,6 +26,8 @@ public class frmSS extends javax.swing.JFrame {
     Icon erro = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/alert-octagon.png"))));
     String resultado = null;
     String esql = null;
+    String ip = null;
+    String db = null;
 
     /**
      * Creates new form frmSS
@@ -41,9 +44,11 @@ public class frmSS extends javax.swing.JFrame {
         try {
             ps = Conexao.getConexao().prepareStatement(sql);
             rs = ps.executeQuery();
+            ip = Conexao.ip;
+            db = Conexao.dataBase;
             resultado = "OK";
-        } catch (SQLException error) {
-            esql = error.toString();
+        } catch (SQLException ex) {
+            esql = ex.toString();
             resultado = "ERRO";
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(frmEmpresa.class.getName()).log(Level.SEVERE, null, ex);
@@ -62,7 +67,7 @@ public class frmSS extends javax.swing.JFrame {
                 } else if (BarraProgresso.getValue() <= 55) {
                     status.setText("Verificando o sistema");
                 } else if (BarraProgresso.getValue() <= 70) {
-                    status.setText("Conectando ao banco de dados");
+                    status.setText("Testando conexão com o banco de dados");
                 } else if (BarraProgresso.getValue() == 71 && resultado == "ERRO") {
                     JOptionPane.showMessageDialog(null, "Erro SQL:\n\n" + esql+"\n\nFavor entre em contato com o suporte", "Erro de Conexao | CM - Store 1.0", JOptionPane.ERROR_MESSAGE, erro);
                     dispose();
@@ -70,14 +75,14 @@ public class frmSS extends javax.swing.JFrame {
                     fs.setVisible(true);
                     break;
                 } else if (BarraProgresso.getValue() < 100 && resultado == "OK") {
-                    status.setText("Conectado");
+                    status.setText("Conectado a "+ip+db+" com sucesso");
                 } else if(BarraProgresso.getValue() == 100 && resultado == "OK"){
-                    frnPrincipal fn = new frnPrincipal();
-                    fn.setVisible(true);
+                    frmLogin fl = new frmLogin();
+                    fl.setVisible(true);
                     dispose();
                 }
             }
-        } catch (Exception ex) {
+        } catch (HeadlessException | InterruptedException ex) {
             Logger.getLogger(frmSS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

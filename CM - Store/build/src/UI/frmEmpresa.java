@@ -45,10 +45,8 @@ public class frmEmpresa extends javax.swing.JFrame {
             ps = Conexao.getConexao().prepareStatement(sql);
             rs = ps.executeQuery();
             tab_loja.setModel(DbUtils.resultSetToTableModel(rs));
-        } catch (SQLException error) {
+        } catch (ClassNotFoundException | SQLException error) {
             JOptionPane.showMessageDialog(null, error, "Erro", JOptionPane.ERROR_MESSAGE, erro);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(frmEmpresa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -61,10 +59,8 @@ public class frmEmpresa extends javax.swing.JFrame {
             ps.setString(1, pesq_loj.getText() + "%");
             rs = ps.executeQuery();
             tab_loja.setModel(DbUtils.resultSetToTableModel(rs));
-        } catch (SQLException error) {
+        } catch (ClassNotFoundException | SQLException error) {
             JOptionPane.showMessageDialog(null, error, "Erro", JOptionPane.ERROR_MESSAGE, erro);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(frmEmpresa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -20,23 +20,26 @@ public class LeParametros {
 
     public static void Ler() throws FileNotFoundException, IOException {
 
-        FileReader fr = new FileReader("parametros.txt");
+        FileReader fr = new FileReader("ConectaBD.txt");
         BufferedReader br = new BufferedReader(fr);
-        
+
         Conexao.sgdb = br.readLine();
         Conexao.driver = br.readLine();
         Conexao.ip = br.readLine();
         Conexao.dataBase = br.readLine();
         Conexao.user = br.readLine();
         Conexao.password = br.readLine();
+
         
         fr.close();
+
     }
 
     public static void main(String[] args) {
         try {
             Ler();
-            System.out.println(Conexao.sgdb);
+            System.out.println(Conexao.dataBase);
+            System.exit(0);
         } catch (IOException ex) {
             Logger.getLogger(LeParametros.class.getName()).log(Level.SEVERE, null, ex);
         }
