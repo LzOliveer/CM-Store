@@ -20,7 +20,7 @@ public class LeParametros {
 
     public static void Ler() throws FileNotFoundException, IOException {
 
-        FileReader fr = new FileReader("ConectaBD.txt");
+        FileReader fr = new FileReader("config-par.cmp");
         BufferedReader br = new BufferedReader(fr);
 
         Conexao.sgdb = br.readLine();

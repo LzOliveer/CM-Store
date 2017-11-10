@@ -43,7 +43,7 @@ public class Conexao {
         } catch (IOException ex) {
             Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        conn = java.sql.DriverManager.getConnection("jdbc:"+sgdb+"://" + ip + dataBase, user, password);
+        conn = java.sql.DriverManager.getConnection("jdbc:"+sgdb+"://" + ip +"/"+ dataBase, user, password);
         return conn;
 
     }

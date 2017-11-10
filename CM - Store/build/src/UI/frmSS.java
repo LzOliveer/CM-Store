@@ -57,8 +57,7 @@ public class frmSS extends javax.swing.JFrame {
 
     public void run() {
         
-        try {
-            TC();
+        try { 
             for (int i = 0; i < 101; i++) {
                 Thread.sleep(150);
                 BarraProgresso.setValue(i);
@@ -68,6 +67,9 @@ public class frmSS extends javax.swing.JFrame {
                     status.setText("Verificando o sistema");
                 } else if (BarraProgresso.getValue() <= 70) {
                     status.setText("Testando conexão com o banco de dados");
+                    if(resultado == null){
+                        TC();
+                    }
                 } else if (BarraProgresso.getValue() == 71 && resultado == "ERRO") {
                     JOptionPane.showMessageDialog(null, "Erro SQL:\n\n" + esql+"\n\nFavor entre em contato com o suporte", "Erro de Conexao | CM - Store 1.0", JOptionPane.ERROR_MESSAGE, erro);
                     dispose();
@@ -75,7 +77,7 @@ public class frmSS extends javax.swing.JFrame {
                     fs.setVisible(true);
                     break;
                 } else if (BarraProgresso.getValue() < 100 && resultado == "OK") {
-                    status.setText("Conectado a "+ip+db+" com sucesso");
+                    status.setText("Conectado a "+ip+"/"+db+" com sucesso");
                 } else if(BarraProgresso.getValue() == 100 && resultado == "OK"){
                     frmLogin fl = new frmLogin();
                     fl.setVisible(true);

@@ -17,7 +17,7 @@ public class SalvaParametros {
     public void Grava() throws IOException {
         frmConfig c = new frmConfig();
 
-        FileWriter arq = new FileWriter("ConectaBD.txt");
+        FileWriter arq = new FileWriter("config-par.cmp");
         PrintWriter print = new PrintWriter(arq);
 
         print.println(frmConfig.SGDB);

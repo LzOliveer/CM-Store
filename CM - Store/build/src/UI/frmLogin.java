@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -52,7 +53,7 @@ public class frmLogin extends javax.swing.JFrame {
                 String nome = (rs.getString("nome"));
                 frnPrincipal fp = new frnPrincipal();
                 fp.setVisible(true);
-                JOptionPane.showMessageDialog(null, "Seja Bem-Vindo " + nome, "Longin | CM - Store 1.0", JOptionPane.INFORMATION_MESSAGE, ok);
+                JOptionPane.showMessageDialog(null, "Seja Bem-Vindo " + nome, "Login | CM - Store 1.0", JOptionPane.INFORMATION_MESSAGE, ok);
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Código ou senha incorretos, favor verifique os dados e insira novamente", "Login | CM - Store 1.0", JOptionPane.ERROR_MESSAGE, erro);
@@ -306,6 +307,7 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     private void pip() {
-        ip.setText(Conexao.ip + Conexao.dataBase);
+        ip.setText(Conexao.ip +"/"+ Conexao.dataBase);
     }
+    
 }
