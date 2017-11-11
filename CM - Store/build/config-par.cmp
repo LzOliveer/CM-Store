@@ -1,5 +1,5 @@
 mysql
-com.jdbc.mysql.Driver
+com.mysql.jdbc.Driver
 luiz.heliohost.org
 luiz_cmstore
 luiz_suporte

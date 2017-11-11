@@ -123,7 +123,7 @@ public class frmLogin extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(14, 147, 255));
         jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/login_1.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/003-login.png"))); // NOI18N
         jButton3.setText("Entrar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +139,7 @@ public class frmLogin extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(14, 147, 255));
         jButton4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sair.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/021-exit.png"))); // NOI18N
         jButton4.setText("Sair");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,10 +215,10 @@ public class frmLogin extends javax.swing.JFrame {
 
         ip.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         ip.setForeground(new java.awt.Color(255, 255, 255));
-        ip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/server-network_1.png"))); // NOI18N
+        ip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/059-database-5.png"))); // NOI18N
         ip.setToolTipText("");
         ip.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        getContentPane().add(ip, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 274, 140, 20));
+        getContentPane().add(ip, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 140, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/login.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -303,7 +303,7 @@ public class frmLogin extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void setIcon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/icon.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/Store_1.png")));
     }
 
     private void pip() {

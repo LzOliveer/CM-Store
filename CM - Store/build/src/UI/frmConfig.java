@@ -32,8 +32,8 @@ public class frmConfig extends javax.swing.JFrame {
     public static String USER;
     public static String PASS;
     
-    Icon erro = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/alert-octagon.png"))));
-    Icon ok = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/certo.png"))));
+    Icon erro = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/Erro.png"))));
+    Icon ok = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/certo_1.png"))));
     
     /**
      * Creates new form frmConfig
@@ -90,7 +90,7 @@ public class frmConfig extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Creative Mind | Configurador e Conexão 1.1");
+        setTitle("Creative Mind | Configurador Local 1.5");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -336,9 +336,9 @@ public class frmConfig extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(73, 173, 255));
         jButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Salvar.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/063-database-1.png"))); // NOI18N
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -346,9 +346,9 @@ public class frmConfig extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setBackground(new java.awt.Color(73, 173, 255));
         jButton2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/server-network.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/061-database-3.png"))); // NOI18N
         jButton2.setText("Testar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,9 +356,9 @@ public class frmConfig extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setBackground(new java.awt.Color(73, 173, 255));
         jButton3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Sair do form.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/exit.png"))); // NOI18N
         jButton3.setText("Sair");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -540,7 +540,7 @@ public class frmConfig extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void setIcon() {
-       setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/server-manager.png")));
+       setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/064-database.png")));
     }
 
     private void CompletaFrm() {
