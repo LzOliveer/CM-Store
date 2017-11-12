@@ -157,9 +157,10 @@ public class frnPrincipal extends javax.swing.JFrame {
         jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jMenu1.setName(""); // NOI18N
+        jMenu1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jMenu1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/shop32.png"))); // NOI18N
         jMenuItem2.setText("Empresa");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +177,7 @@ public class frnPrincipal extends javax.swing.JFrame {
         jMenu6.setText("Funcionário");
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/account-plus.png"))); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/044-user-1.png"))); // NOI18N
         jMenuItem3.setText("Cadastro");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,7 +188,7 @@ public class frnPrincipal extends javax.swing.JFrame {
         jMenuItem3.getAccessibleContext().setAccessibleDescription("Listagem, cadastro, edição e exclusão de funcionários");
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/salario.png"))); // NOI18N
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/026-cash.png"))); // NOI18N
         jMenuItem4.setText("Ajuste de Salário");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,8 +311,10 @@ public class frnPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        frmFuncionario ff = new frmFuncionario();
-        ff.setVisible(true);
+        ifrmFuncionario iff = new ifrmFuncionario();
+        iff.setVisible(true);
+        desktop.add(iff);
+        iff.setPosicao();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -319,11 +322,10 @@ public class frnPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        /*
-        frmTeste ft = new frmTeste();
-        ft.setVisible(true);
-        desktop.add(ft);
-        */
+        ifrmSalario ifs = new ifrmSalario();
+        ifs.setVisible(true);
+        desktop.add(ifs);
+        ifs.setPosicao();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**

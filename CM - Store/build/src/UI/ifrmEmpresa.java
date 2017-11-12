@@ -120,7 +120,8 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
-        setTitle("Empresa | CM - Store 1.0");
+        setTitle("Gerenciador de Empresas | CM - Store 1.0");
+        setToolTipText("");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/shop.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -149,12 +150,16 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
 
             }
         ));
+        tab_emp.setGridColor(new java.awt.Color(14, 147, 255));
+        tab_emp.setRowSelectionAllowed(false);
+        tab_emp.setSelectionBackground(new java.awt.Color(73, 173, 255));
         tab_emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab_empMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tab_emp);
+        tab_emp.getAccessibleContext().setAccessibleDescription("");
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText("Código");
@@ -163,6 +168,7 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
         cod.setBackground(new java.awt.Color(204, 204, 204));
         cod.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cod.setForeground(new java.awt.Color(255, 255, 255));
+        cod.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         cod.setToolTipText("");
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -236,7 +242,8 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
         cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/025-add.png"))); // NOI18N
         cadastrar.setText("Cadastrar");
         cadastrar.setToolTipText("Adiciona uma nova empresa");
-        cadastrar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cadastrar.setBorder(null);
+        cadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cadastrar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 cadastrarMouseDragged(evt);
@@ -268,7 +275,8 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/024-edit.png"))); // NOI18N
         jButton2.setText("Editar");
         jButton2.setToolTipText("Edita o cadastro da empresa");
-        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton2.setBorder(null);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -281,7 +289,8 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/023-delete.png"))); // NOI18N
         jButton3.setText("Excluir");
         jButton3.setToolTipText("Exclui o cadastro da empresa");
-        jButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton3.setBorder(null);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -294,7 +303,8 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Limpar.png"))); // NOI18N
         jButton4.setText("Limpar");
         jButton4.setToolTipText("Limpa o formulário");
-        jButton4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton4.setBorder(null);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -307,7 +317,8 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/exit.png"))); // NOI18N
         jButton5.setText("Sair");
         jButton5.setToolTipText("Fecha o formulário");
-        jButton5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton5.setBorder(null);
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -423,7 +434,7 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jButton5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cadastrar, jButton2, jButton3, jButton4, jButton5});
@@ -513,8 +524,7 @@ public class ifrmEmpresa extends javax.swing.JInternalFrame {
                 list_emp();
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(ifrmEmpresa.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ifrmEmpresa.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_cadastrarActionPerformed

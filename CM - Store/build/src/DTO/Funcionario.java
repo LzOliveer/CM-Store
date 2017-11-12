@@ -10,7 +10,7 @@ package DTO;
  * @author luizo
  */
 public class Funcionario {
-    private String cod;
+    private int cod;
     private String cpf;
     private String rg;
     private String pis;
@@ -21,19 +21,19 @@ public class Funcionario {
     private String cel;
     private String sexo;
     private String pass;
-    private String cat;
+    private int cat;
 
     /**
      * @return the cod
      */
-    public String getCod() {
+    public int getCod() {
         return cod;
     }
 
     /**
      * @param cod the cod to set
      */
-    public void setCod(String cod) {
+    public void setCod(int cod) {
         this.cod = cod;
     }
 
@@ -180,14 +180,14 @@ public class Funcionario {
     /**
      * @return the cat
      */
-    public String getCat() {
+    public int getCat() {
         return cat;
     }
 
     /**
      * @param cat the cat to set
      */
-    public void setCat(String cat) {
+    public void setCat(int cat) {
         this.cat = cat;
     }
 }
