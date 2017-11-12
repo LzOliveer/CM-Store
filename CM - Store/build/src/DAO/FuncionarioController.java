@@ -21,8 +21,8 @@ import javax.swing.JOptionPane;
  */
 public class FuncionarioController {
 
-    Icon erro = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icones/alert-octagon.png"))));
-    Icon ok = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icones/certo.png"))));
+    Icon erro = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icones/Erro.png"))));
+    Icon ok = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icones/certo_1.png"))));
 
     public boolean cadastra(Funcionario func) throws SQLException, ClassNotFoundException {
         String sql = "INSERT INTO funcionario(cpf,rg,pis,n_ct,nome,endereco,telefone,celular,sexo,senha,categoria) VALUES(?,?,?,?,?,?,?,?,?,?,?)";

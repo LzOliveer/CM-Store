@@ -22,6 +22,7 @@ import javax.swing.ImageIcon;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -55,7 +56,7 @@ public class frnPrincipal extends javax.swing.JFrame {
         ConnDB = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Icones/fundi.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Icones/background2.png"));
         Image im = icon.getImage();
         desktop = new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics g){
@@ -89,16 +90,18 @@ public class frnPrincipal extends javax.swing.JFrame {
 
         Hora.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         Hora.setForeground(new java.awt.Color(255, 255, 255));
-        Hora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Hora.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Hora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/013-circular-clock.png"))); // NOI18N
 
         Data.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         Data.setForeground(new java.awt.Color(255, 255, 255));
-        Data.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Data.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Data.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/015-calendar.png"))); // NOI18N
 
         ConnDB.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         ConnDB.setForeground(new java.awt.Color(255, 255, 255));
         ConnDB.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        ConnDB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/server-network_1.png"))); // NOI18N
+        ConnDB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/059-database-5.png"))); // NOI18N
         ConnDB.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,24 +116,21 @@ public class frnPrincipal extends javax.swing.JFrame {
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(ConnDB, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 350, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 502, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 488, Short.MAX_VALUE)
                 .add(jLabel2)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
-                .add(Data)
-                .add(18, 18, 18)
-                .add(Hora, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(Data, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(Hora, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 103, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-
-        jPanel4Layout.linkSize(new java.awt.Component[] {Data, Hora}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
-
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(Data, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, Hora, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .add(ConnDB, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+            .add(ConnDB, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
             .add(jSeparator2)
             .add(jLabel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -143,14 +143,15 @@ public class frnPrincipal extends javax.swing.JFrame {
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 630, Short.MAX_VALUE)
+            .add(0, 686, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Store_1.png"))); // NOI18N
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/shop32.png"))); // NOI18N
         jMenu1.setText("Empresa");
+        jMenu1.setToolTipText("Gerenciador de Empresas, Funcionários");
         jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -159,7 +160,7 @@ public class frnPrincipal extends javax.swing.JFrame {
         jMenu1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/store.png"))); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/shop32.png"))); // NOI18N
         jMenuItem2.setText("Empresa");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +172,7 @@ public class frnPrincipal extends javax.swing.JFrame {
 
         jMenu1.add(jSeparator1);
 
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Funcionarios.png"))); // NOI18N
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/047-team.png"))); // NOI18N
         jMenu6.setText("Funcionário");
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
@@ -202,8 +203,9 @@ public class frnPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
         jMenu1.getAccessibleContext().setAccessibleDescription("Cadastro, edição e exclusão de empresas");
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Clientes_1.png"))); // NOI18N
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Clientes.png"))); // NOI18N
         jMenu3.setText("Clientes");
+        jMenu3.setToolTipText("Gerenciador de Clientes");
         jMenu3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jMenu3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -221,31 +223,34 @@ public class frnPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Produto.png"))); // NOI18N
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Produto_1.png"))); // NOI18N
         jMenu4.setText("Produtos");
+        jMenu4.setToolTipText("Produtos");
         jMenu4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jMenu4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jMenu4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Financeiro.png"))); // NOI18N
-        jMenu5.setText("Finanças");
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Financeiro_1.png"))); // NOI18N
+        jMenu5.setText("Financeiro");
+        jMenu5.setToolTipText("Financeiro");
         jMenu5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMenu5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jMenu5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jMenu5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jMenuBar1.add(jMenu5);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Opções_1.png"))); // NOI18N
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Opções_2.png"))); // NOI18N
         jMenu2.setText("Opções");
+        jMenu2.setToolTipText("Opções");
         jMenu2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMenu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jMenu2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jMenu2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sair.png"))); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/exit.png"))); // NOI18N
         jMenuItem1.setText("Sair");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,8 +303,10 @@ public class frnPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        frmEmpresa fe = new frmEmpresa();
-        fe.setVisible(true);
+        ifrmEmpresa ife = new ifrmEmpresa();
+        ife.setVisible(true);
+        desktop.add(ife);
+        ife.setPosicao();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -381,7 +388,7 @@ public class frnPrincipal extends javax.swing.JFrame {
     }
 
     private void setIcon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/Store_1.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/shop.png")));
     }
 
     private void setLAF() {
@@ -392,8 +399,8 @@ public class frnPrincipal extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (Exception e) {
-            // If Nimbus is not available, you can set the GUI to another look and feel.
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
+            System.out.println("ERROR IN LAF");
         }
     }
 

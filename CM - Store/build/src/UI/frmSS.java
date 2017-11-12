@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
  */
 public class frmSS extends javax.swing.JFrame {
 
-    Icon erro = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/alert-octagon.png"))));
+    Icon erro = new ImageIcon((Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/Erro.png"))));
     String resultado = null;
     String esql = null;
     String ip = null;
@@ -51,7 +51,7 @@ public class frmSS extends javax.swing.JFrame {
             esql = ex.toString();
             resultado = "ERRO";
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(frmEmpresa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(frmSS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -142,7 +142,7 @@ public class frmSS extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(status, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BarraProgresso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BarraProgresso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,6 +209,6 @@ public class frmSS extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void setIcon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/Store_1.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/shop.png")));
     }
 }
